@@ -11,8 +11,10 @@ echo
 # select fastest mirrors
 echo $PWD | sh ./select-mirrors.sh
 # update softwares
-echo $PWD | sudo sh ./update-softwares.sh
+echo $PWD | sudo sh ./update-software.sh
 # setup fonts
 echo $PWD | sh ./setup-fonts.sh
 # setup vim
 echo $PWD | sh ./setup-vim-ide.sh
+# install software
+echo $PWD | sh ./install-software.sh
