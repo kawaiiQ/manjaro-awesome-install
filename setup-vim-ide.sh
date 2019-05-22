@@ -13,7 +13,7 @@ sudo -K
 echo $PWD | sudo -S pacman -S \
   boost boost-libs make cmake \
   clang gcc \
-  python python2 python-pip python3-pip \
+  python python2 python-pip python2-pip \
   jdk-openjdk maven \
   mono \
   rust \
