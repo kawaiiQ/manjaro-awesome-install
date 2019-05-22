@@ -5,4 +5,4 @@ read -s -p "Enter your password: " PWD
 echo
 
 sudo -K
-echo -e PWD | sudo -S pacman -S chromium simplescreenrecorder filezilla
+echo $PWD | sudo -S pacman -S chromium simplescreenrecorder filezilla --noconfirm
