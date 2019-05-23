@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install({'tag':1})}}
 Plug 'scrooloose/nerdtree'
 Plug 'luochen1990/rainbow'
+Plug 'lervag/vimtex'
+Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 call plug#end()
 
@@ -16,36 +18,33 @@ map . gt
 let g:rainbow_active = 1
 
 " 显示行号，并设置行号及背景的颜色
-:set number
-:highlight LineNr ctermfg=23
-:highlight LineNr ctermbg=black
+set number
+highlight LineNr ctermfg=23
+highlight LineNr ctermbg=black
 
 " 设置缩进
-:set expandtab
-:set ts=2
-:set sw=2
-:set shiftwidth=2
-:set autoindent
-":set smartindent
-"let g:typescript_indent_disable=1
+set expandtab
+set ts=2
+set sw=2
+set shiftwidth=2
+set autoindent
 
 " 使用系统剪贴板
-:set clipboard=unnamed
+set clipboard=unnamed
 
 " 搜索高亮
-:set hlsearch
+set hlsearch
 
 " 设置折叠
-:set foldmethod=indent
-:set foldlevel=99
+set foldmethod=indent
+set foldlevel=99
 
 " 取消自动换行
-:set nowrap
+" :set nowrap
 
 " 设置coc.nvim插件
 let g:coc_global_extensions = [
   \'coc-emoji',
-  \'coc-vimtex',
   \'coc-json','coc-tsserver','coc-html','coc-css','coc-vetur','coc-phpls',
   \'coc-java',
   \'coc-solargraph',
@@ -62,4 +61,25 @@ let g:coc_global_extensions = [
   \'coc-svg',
   \'coc-tailwindcss',
   \'coc-angular',
-  \'coc-vimlsp']
+  \'coc-vimlsp'
+  \]
+
+" 设置latex编译器
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_compiler_latexmk_engines = {
+  \ 'xelatex'          : '-xelatex',
+  \ '_'                : '-pdf',
+  \ 'pdflatex'         : '-pdf',
+  \ 'dvipdfex'         : '-pdfdvi',
+  \ 'lualatex'         : '-lualatex',
+  \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+  \ 'context (luatex)' : '-pdf -pdflatex=context',
+  \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+  \}
+" 设置公式自动变化
+set conceallevel=1
+let g:tex_conceal="abdgm"
+" latex一键编译
+map <C-P> <Bslash>ll

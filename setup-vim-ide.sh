@@ -19,7 +19,7 @@ echo $PWD | sudo -S pacman -S \
   rust \
   go \
   nodejs npm yarn \
-  texlive-most texlive-lang biber \
+  texlive-most texlive-lang biber xdotool zathura \
   --noconfirm
 rm -rf  ~/.vim
 # download vim-plug and other extensions
