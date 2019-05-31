@@ -8,13 +8,11 @@ echo
 echo
 echo
 
-# select fastest mirrors
+# 切换到国内的源并自动更新所有软件
 echo $PWD | sh ./select-mirrors.sh
-# update softwares
-echo $PWD | sudo sh ./update-software.sh
-# setup fonts
+# 设置中文字体，安装中文输入法
 echo $PWD | sh ./setup-fonts.sh
-# setup vim
+# 配置神之编辑器
 echo $PWD | sh ./setup-vim-ide.sh
-# install software
+# 安装常用软件
 echo $PWD | sh ./install-software.sh

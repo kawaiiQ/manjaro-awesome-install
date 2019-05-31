@@ -1,3 +1,6 @@
+# 这个脚本会干什么：
+# - 更新所有已安装软件。
+
 echo 'Update all packages ...'
 echo
 
