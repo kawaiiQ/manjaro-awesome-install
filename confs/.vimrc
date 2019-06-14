@@ -4,7 +4,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install({'tag':1})}}
 Plug 'scrooloose/nerdtree'
 Plug 'luochen1990/rainbow'
 Plug 'lervag/vimtex'
-Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 call plug#end()
 
@@ -63,14 +63,17 @@ let g:coc_global_extensions = [
   \'coc-angular',
   \'coc-vimlsp'
   \]
+set updatetime=300
+" 设置tsx和jsx的文件类型
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
 " 设置latex编译器
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_compiler_latexmk_engines = {
-  \ 'xelatex'          : '-xelatex',
   \ '_'                : '-pdf',
+  \ 'xelatex'          : '-xelatex',
   \ 'pdflatex'         : '-pdf',
   \ 'dvipdfex'         : '-pdfdvi',
   \ 'lualatex'         : '-lualatex',
