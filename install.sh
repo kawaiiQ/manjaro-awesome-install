@@ -16,3 +16,6 @@ echo $PWD | sh ./setup-fonts.sh
 echo $PWD | sh ./setup-vim-ide.sh
 # 安装常用软件
 echo $PWD | sh ./install-software.sh
+# 配置Compton
+echo $PWD | sh ./set-compton.sh
+
